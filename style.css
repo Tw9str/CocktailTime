@@ -40,9 +40,10 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
-header .container span {
+header .container .logo {
   font-size: 2.5rem;
   font-weight: 700;
+  filter: drop-shadow(-10px 0px 4px #c2410c);
 }
 header .container ul {
   display: flex;
@@ -77,11 +78,13 @@ section .container .details h1 {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 section .container .details p {
   font-family: "Roboto", sans-serif;
   font-size: clamp(1rem, 5vw, 1.5rem);
   line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 section .container .details .buttons {
   display: flex;
@@ -92,6 +95,7 @@ section .container .details .buttons {
 }
 section .container .details .buttons a {
   flex: 0 0 240px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 section .container .details .buttons a:last-child {
   font-size: 24px;
@@ -119,6 +123,7 @@ section .container:not(.details) a img,
 /* About */
 .about .left {
   flex: 0 0 50%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .about .right {
   display: grid;
