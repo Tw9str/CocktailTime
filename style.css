@@ -65,40 +65,40 @@ section {
   align-items: center;
   justify-content: center;
 }
-section .container {
+.landing .container {
   display: flex;
   align-items: center;
   justify-content: space-around;
   color: #ffffff;
 }
-section .container .details {
+.landing .container .details {
   flex: 0 0 50%;
 }
-section .container .details h1 {
+.landing .container .details h1 {
   font-size: clamp(1rem, 10vw, 4rem);
   line-height: 1;
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-section .container .details p {
+.landing .container .details p {
   font-family: "Roboto", sans-serif;
   font-size: clamp(1rem, 5vw, 1.5rem);
   line-height: 1.5;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-section .container .details .buttons {
+.landing .container .details .buttons {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
   margin-top: 1.5rem;
 }
-section .container .details .buttons a {
+.landing .container .details .buttons a {
   flex: 0 0 240px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-section .container .details .buttons a:last-child {
+.landing .container .details .buttons a:last-child {
   font-size: 24px;
   font-weight: 700;
   border-radius: 4px;
@@ -109,74 +109,93 @@ section .container .details .buttons a:last-child {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.3s;
 }
-section .container .details .buttons a:last-child:hover {
+.landing .container .details .buttons a:last-child:hover {
   background-color: #fb923c;
   border: 1px solid #ffffff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 2px;
 }
-section .container:not(.details) a {
+.landing .container a:last-child {
   flex: 0 0 20%;
 }
-section .container:not(.details) a img,
-.right img {
-  max-width: 100%;
+.landing .container a:last-child img {
+  filter: drop-shadow(0px 24px 24px #000000);
 }
-@media (max-width: 576px) {
-  .container {
-    margin: 0 4%;
-  }
-
-  section .container .details .buttons {
-    flex-direction: column-reverse;
-  }
-  section .container .details .buttons a {
-    flex: 0 0 0;
-    width: 100%;
-  }
-  section .container .details h1,
-  section .container .details p {
-    text-align: center;
-  }
+.landing .container a img {
+  max-width: 100%;
 }
 @media (max-width: 1024px) {
   header .container ul {
     display: none;
   }
-  section .container {
+  .landing .container {
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
   }
 }
+@media (max-width: 576px) {
+  .container {
+    margin: 0 4%;
+  }
+  .landing .container .details .buttons {
+    flex-direction: column-reverse;
+  }
+  .landing .container .details .buttons a {
+    flex: 0 0 0;
+    width: 100%;
+  }
+  .landing .container .details h1,
+  .landing .container .details p {
+    text-align: center;
+  }
+}
 /* About */
 .about {
-  padding: 1rem 0;
-}
-.about .left {
-  flex: 0 0 60%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2rem;
+  padding: 2rem 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
-.about .left > div :is(h1, h2) {
-  font-size: clamp(1.5rem, 10vw, 2rem);
-  margin-bottom: 1rem;
+.about .container article:not(:last-child) {
+  margin-bottom: 6rem;
 }
-.about .left > div :is(p, li, a) {
-  font-size: clamp(1rem, 10vw, 1.5rem);
-  margin-bottom: 1rem;
+.about .container article .heading > a img {
+  max-width: 100%;
 }
-.about .right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  flex: 0 0 30%;
+.about .container article > img {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 100%;
+  height: 720px;
+  margin-top: 2rem;
 }
-@media (max-width: 1024px) {
-  .about .left {
-    flex-direction: column;
+.about .container > article :is(h1, h2) {
+  font-size: clamp(1.5rem, 10vw, 4rem);
+  margin-bottom: 2rem;
+}
+.about .container > article :is(p, li, a) {
+  font-size: clamp(1rem, 10vw, 2rem);
+  margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  .about .container article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  .about .container article:nth-child(even) img {
+    order: -1;
+  }
+  .about .container article .heading {
+    flex: 0 0 50%;
+  }
+}
+@media (max-width: 991px) {
+  .about .container article {
+    text-align: center;
+  }
+  .about .container > article :is(p, li, a) {
+    font-size: clamp(1rem, 10vw, 1.2rem);
+    margin-bottom: 2rem;
   }
 }
