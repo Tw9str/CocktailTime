@@ -58,7 +58,7 @@ header .container ul li:hover {
 }
 section {
   background-image: url(circle-scatter-haikei.svg);
-  min-height: calc(100vh - 94px);
+  min-height: calc(100vh - 96px);
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
