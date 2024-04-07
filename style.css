@@ -41,7 +41,7 @@ header .container {
   justify-content: space-between;
 }
 header .container .logo {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 10vw, 3rem);
   font-weight: 700;
   filter: drop-shadow(-10px 0px 4px #c2410c);
 }
@@ -50,6 +50,7 @@ header .container ul {
   gap: 4rem;
   font-size: 2.5rem;
   font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 header .container ul li:hover {
   color: #f97316;
@@ -57,7 +58,7 @@ header .container ul li:hover {
 }
 section {
   background-image: url(circle-scatter-haikei.svg);
-  min-height: calc(100vh - 85px);
+  min-height: calc(100vh - 94px);
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
@@ -120,27 +121,21 @@ section .container:not(.details) a img,
 .right img {
   max-width: 100%;
 }
-/* About */
-.about .left {
-  flex: 0 0 50%;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.about .right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  flex: 0 0 20%;
-}
 @media (max-width: 576px) {
   .container {
     margin: 0 4%;
   }
+
   section .container .details .buttons {
     flex-direction: column-reverse;
   }
   section .container .details .buttons a {
     flex: 0 0 0;
     width: 100%;
+  }
+  section .container .details h1,
+  section .container .details p {
+    text-align: center;
   }
 }
 @media (max-width: 1024px) {
@@ -151,5 +146,37 @@ section .container:not(.details) a img,
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+    margin-top: 2rem;
+  }
+}
+/* About */
+.about {
+  padding: 1rem 0;
+}
+.about .left {
+  flex: 0 0 60%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.about .left > div :is(h1, h2) {
+  font-size: clamp(1.5rem, 10vw, 2rem);
+  margin-bottom: 1rem;
+}
+.about .left > div :is(p, li, a) {
+  font-size: clamp(1rem, 10vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+.about .right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  flex: 0 0 30%;
+}
+@media (max-width: 1024px) {
+  .about .left {
+    flex-direction: column;
   }
 }
